@@ -1,0 +1,18 @@
+using System;
+using Microsoft.Win32;
+
+namespace MyProgram
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Replace the path with the path to your program
+            string path = "C:\\Program Files\\MyProgram\\MyProgram.exe";
+            RegistryKey key = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
+            key.SetValue("MyProgram", path);
+            
+            Console.WriteLine("Success!");
+        }
+    }
+}
